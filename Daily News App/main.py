@@ -29,9 +29,10 @@ Subject: Tesla News Bot
 """
 
 for article in content["articles"]:
-    email_txt = email_txt + "\n" + "\n" + article["title"] + "\n" + article["description"]
-    # print(article["title"])
-    # print(article["description"])
+    if article["title"] is not None:
+        email_txt = email_txt + "\n" + "\n" + article["title"] + "\n" + article["description"]
+        # print(article["title"])
+        # print(article["description"])
     print(email_txt)
 
 email_txt = email_txt.encode('utf-8')
